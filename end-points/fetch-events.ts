@@ -71,7 +71,7 @@ export async function fetchEvents(req: Request) {
     // Fetch filtered events for the current page
     const events = await collection
       .find(query)
-      .sort({ startDate: 1 }) // Sort by startDate ascending to show nearest events first
+      .sort({ startDate: 1, endDate: 1 })
       .skip(skip)
       .limit(pageSize)
       .toArray();
