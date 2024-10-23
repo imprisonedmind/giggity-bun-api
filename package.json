@@ -1,5 +1,10 @@
 {
   "name": "bun-mongodb-api",
+  "version": "0.1.0",
+  "scripts": {
+    "start": "bun run index.ts",
+    "dev": "bun --hot run index.ts"
+  },
   "module": "index.ts",
   "type": "module",
   "devDependencies": {
