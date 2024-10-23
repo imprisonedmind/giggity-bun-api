@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "scripts": {
     "start": "bun run index.ts",
-    "dev": "bun --hot run index.ts"
+    "dev": "bun --hot run index.ts",
+    "dbuild": "docker build -t bun-api .",
+    "drun": "docker run -p 8080:8080 bun-api"
   },
   "module": "index.ts",
   "type": "module",
