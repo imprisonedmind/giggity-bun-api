@@ -1,6 +1,6 @@
 import { MongoClient } from "mongodb";
 
-export const client = new MongoClient(`${process.env.MONGO_URL}`);
+export const client = new MongoClient(`${process.env.MONGODB_URI}`);
 let isConnected = false; // Track connection state
 
 export async function connectClient() {
@@ -23,7 +23,7 @@ export const db = client.db(process.env.DATABASE_NAME);
 
 // DROP ALL EVENTS
 export async function truncateEventsCollection() {
-  const uri = process.env.MONGO_URL; // Make sure this environment variable is set
+  const uri = process.env.MONGODB_URI; // Make sure this environment variable is set
   if (!uri) {
     throw new Error("MONGODB_URI environment variable is not set");
   }
