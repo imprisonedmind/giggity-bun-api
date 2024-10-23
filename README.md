@@ -6,8 +6,8 @@ To create, fetch and enrich event data.
 This project is set up to be run with containers on a VPS
 via a main parent docker [repo](https://github.com/imprisonedmind/giggity-docker).
 ```bash
-docker build -t bun-api .
-docker run -p 8080:8080 bun-api
+bun dbuild
+bun drun
 ```
 
 
