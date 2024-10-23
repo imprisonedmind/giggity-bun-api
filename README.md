@@ -1,15 +1,19 @@
-# bun-mongodb-api
+# bun-mongo-api - Bun API 
+Using bun serve(), an API that interacts with mongoDb, quicketAPI and openAI.
+To create, fetch and enrich event data.
 
-To install dependencies:
-
+## Testing with Docker
+This project is set up to be run with containers on a VPS
+via a main parent docker [repo](https://github.com/imprisonedmind/giggity-docker).
 ```bash
-bun install
+docker build -t bun-api .
+docker run -p 8080:8080 bun-api
 ```
 
-To run:
 
+## Testing Normally
+If you wish to just run the front-end, run it normally with bun.
 ```bash
-bun run index.ts
+bun i 
+bun run dev
 ```
-
-This project was created using `bun init` in bun v1.1.31. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
