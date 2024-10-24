@@ -35,9 +35,9 @@ export async function fetchEvents(req: Request) {
         $gte: now.toISOString(), // Greater than or equal to current time
         // $lte: futureDate.toISOString(), // Less than or equal to future date
       },
-      endDate: {
-        $gt: now.toISOString(), // Less than or equal to future date
-      },
+      // endDate: {
+      //   $gt: now.toISOString(), // Less than or equal to future date
+      // },
     };
     if (tags.length > 0) {
       query["$or"] = tags.map((tag) => ({
@@ -71,7 +71,7 @@ export async function fetchEvents(req: Request) {
     // Fetch filtered events for the current page
     const events = await collection
       .find(query)
-      .sort({ startDate: 1, endDate: 1 })
+      .sort({ startDate: 1 })
       .skip(skip)
       .limit(pageSize)
       .toArray();
