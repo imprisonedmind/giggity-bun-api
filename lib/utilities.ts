@@ -135,3 +135,22 @@ export function logProgress(currentPage: number, totalPages: number) {
     `${green} ${progressBar} ${progress}% / Page ${currentPage} / ${totalPages} ${reset}`
   );
 }
+
+// format dates
+const pad = (n: number) => `${Math.floor(Math.abs(n))}`.padStart(2, "0");
+
+export const toISOStringWithTimezone = (date: Date) => {
+  return (
+    date.getFullYear() +
+    "-" +
+    pad(date.getMonth() + 1) +
+    "-" +
+    pad(date.getDate()) +
+    "T" +
+    pad(date.getHours()) +
+    ":" +
+    pad(date.getMinutes()) +
+    ":" +
+    pad(date.getSeconds())
+  );
+};
