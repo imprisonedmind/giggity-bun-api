@@ -17,7 +17,7 @@ export async function fetchEvents(req: Request) {
   const name = searchParams.get("name");
   const now = new Date();
 
-  const formatedDate = toISOStringWithTimezone(new Date(now));
+  const formatedDate = toISOStringWithTimezone(now);
   console.log("->", formatedDate);
 
   if (isNaN(currentPage) || currentPage < 1) {
