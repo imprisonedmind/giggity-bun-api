@@ -17,7 +17,8 @@ export async function fetchEvents(req: Request) {
   const name = searchParams.get("name");
   const now = new Date();
 
-  const formatedDate = toISOStringWithTimezone(new Date(now)); // '2024-01-06T19:20:34'
+  const formatedDate = toISOStringWithTimezone(new Date(now));
+  console.log("->", formatedDate);
 
   if (isNaN(currentPage) || currentPage < 1) {
     return badJsonResponse("Invalid page number", 400);
